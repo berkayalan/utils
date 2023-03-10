@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -64,3 +65,12 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
+# downloading zip file
+!wget zipfilepath.zip
+
+# extracting a zip file
+import zipfile
+zip_file_path = "zipfilepath"
+dir_to_extract = "dirtoextract"
+with zipfile.ZipFile(zip_file_path, 'r') as my_zip:
+    my_zip.extractall(dir_to_extract)
