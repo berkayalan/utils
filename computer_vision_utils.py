@@ -11,12 +11,14 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision import datasets, transforms
 from torchvision.utils import make_grid
 import os
-from IPython.display import display
-
+from IPython.display import display, Image
 
 # display image
 with Image.open("filepath") as im:
     display(im)
+
+# second way to display image for images in a folder
+display(Image(filename=f"{os.path.join(base_cats_dir, os.listdir(base_cats_dir)[0])}"))
 
 # convert image to numpy array
 def convert_to_array(image):
